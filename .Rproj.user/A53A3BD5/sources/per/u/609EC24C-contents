@@ -1,0 +1,26 @@
+setwd("C:/Users/marte/OneDrive - Università degli Studi di Milano/Desktop/SCIENTIFIC PROGRAMMING/VariantPackage")
+
+
+
+library(devtools)
+getwd()
+setwd("C:/Users/marte/OneDrive - Università degli Studi di Milano/Desktop/SCIENTIFIC PROGRAMMING")
+current.node = as.package("C:/Users/marte/OneDrive - Università degli Studi di Milano/Desktop/SCIENTIFIC PROGRAMMING/VariantPackage")
+load_all(current.node$path)
+document(current.node)
+build_vignettes("VariantPackage")
+
+
+library(devtools)
+
+load_all("VariantPackage")
+document("VariantPackage")
+build_vignettes("VariantPackage")
+
+
+
+library(BiocCheck)
+BiocCheck("VariantPackage")
+
+install.packages("tinytex")
+tinytex::install_tinytex()

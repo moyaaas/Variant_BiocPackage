@@ -1,0 +1,20 @@
+Package: VariantPackage
+Title: S4 Classes for Genetic Variant annotation
+Version: 0.1.0
+Authors@R: 
+    person("Martina", "Montonati", , "martina.montonati@studenti.unimi.it", role = c("aut", "cre"))
+Description: R package that provides a set of S4 classes for representing different genetic variants. It includes validating variant data, accessing variant attributes, and visualizing variant information.
+biocViews: VariantAnnotation, GenomicRanges, Genetics, DataRepresentation
+License: GPL-3
+Encoding: UTF-8
+Imports:
+    GenomicRanges,
+    methods,
+    stringr
+Suggests:
+    IRanges,
+    testthat,
+    knitr,
+    markdown
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2

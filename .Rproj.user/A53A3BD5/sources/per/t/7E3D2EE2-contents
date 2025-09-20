@@ -1,0 +1,51 @@
+library(VariantPackage)
+library(GenomicRanges)
+
+test_gr <- GRanges(seqnames = "chr1", ranges = IRanges(start = 1000, end = 1000))
+
+snv <- SNV(
+  variantID = "rs123",
+  pos = test_gr,
+  ref = "A",
+  alt = "G",
+  geneSymb = "TP53",
+  geneType = "protein-coding",
+  consequence = "missense",
+  clinicalRel = "Pathogenic",
+  HGVSp = "p.R381L"
+)
+
+show(snv)
+aamutation(snv)
+
+snv1 <- SNV("123", GRanges('seq1',123,123), "A","T", "MYC", "protein_coding", "silent")
+snv2 <- SNV("rs123",test_gr,"A","G","TP53","protein-coding","missense","p.R381L")
+
+snv3 <- SNV("rs123",test_gr, "A","G", "TP53","protein-coding","missense", HGVSp = "p.Arg381Leu")
+aamutation(snv3)
+
+
+dnv <- DNV(
+  variantID = "dnv1",
+  pos = test_gr,
+  ref = "AT",
+  alt = "GC",
+  geneSymb = "BRCA1",
+  geneType = "protein-coding",
+  consequence = "missense"
+)
+
+show(dnv)
+aamutation(dnv)
+#setter usage
+HGVSp(dnv)<-"p.E250F"
+HGVSp(dnv)
+show(dnv)
+aamutation(dnv)
+
+ins <- Insertion( "ins1",test_gr,"-","ATG","EGFR","protein-coding", "frameshift")
+variantID(ins)
+
+
+
+
